@@ -1,9 +1,6 @@
 package com.example.laboratory.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,6 +16,11 @@ public class Report extends BaseEntity {
     private String diagnosisTitle;
     private  String diagnosisDetails;
     private LocalDate dateReported;
+    @PrePersist
+    protected void onCreate() {
+        this.dateReported = LocalDate.now();
+    }
+
     //private String photo;
 
     @ManyToOne

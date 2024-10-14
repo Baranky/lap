@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public record ReportReq (
          String diagnosisTitle,
          String diagnosisDetails,
-         LocalDate dateReported,
+        // LocalDate dateReported,
          //String photo,
          Long workerId,
          Long patientId){

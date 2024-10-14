@@ -13,15 +13,16 @@ function Report() {
   useEffect(() => {
     const fetchReports = async () => {
       try {
-        const response = await axiosInstance.get(''); // Backend'den rapor verilerini çekiyoruz
-        setReports(response.data);
+        // Tarihe göre sıralanmış verileri çeker
+        const response = await axiosInstance.get('/sort'); 
+        setReports(response.data); // Gelen verileri state'e at
       } catch (error) {
-        console.error('Error fetching reports:', error);
+        console.error('Error fetching sorted reports:', error);
       }
     };
 
     fetchReports();
-  }, []);
+  }, []); // Sayfa yüklendiğinde verileri getir
 
   // Raporu silme işlemi
   const handleDeleteReport = async () => {
@@ -60,7 +61,7 @@ function Report() {
   return (
     <div className="container mt-5">
       <div className="d-flex justify-content-between">
-        <h2>Report List</h2>
+        <h2>Report List </h2> {/* Başlığa tarih sıralamasını ekledim */}
         <button className="btn btn-success" onClick={() => navigate('/addreport')}>
           Add New Report
         </button>

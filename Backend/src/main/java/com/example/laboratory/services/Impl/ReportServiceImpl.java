@@ -116,7 +116,7 @@ public class ReportServiceImpl implements ReportService {
         Report report = new Report();
         report.setDiagnosisTitle(request.diagnosisTitle());
         report.setDiagnosisDetails(request.diagnosisDetails());
-        report.setDateReported(request.dateReported());
+        //report.setDateReported(request.dateReported());
 
         LabWorker labWorker = labotaryPersonService.getById(request.workerId());
         report.setLabWorker(labWorker);

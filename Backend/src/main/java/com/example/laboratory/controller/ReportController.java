@@ -38,6 +38,7 @@ public class ReportController {
         return  reportService.getReportId(id);
     }
 
+    //tarihe gore siralama
     @GetMapping("sort")
     public ResponseEntity<List<ReportRes>> find(){
          return new ResponseEntity<>(reportService.findAllReportsOrderByDate(),HttpStatus.OK);

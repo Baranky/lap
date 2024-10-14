@@ -16,6 +16,7 @@ public interface PatientRepository extends JpaRepository<Patient,Long> {
     List<Patient> searchByNameAndSurname( @Param("tc") Long patientTC,@Param("name") String patientName, @Param("surname") String patientSurname);
 
 
+    //bir hastanın raporları
     @Query("SELECT p.reports FROM Patient p WHERE p.id = :patientId")
     List<Report> findReportsByPatientId(Long patientId);
 }

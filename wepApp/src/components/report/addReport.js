@@ -7,7 +7,6 @@ function AddReport() {
   const [report, setReport] = useState({
     diagnosisTitle: '',
     diagnosisDetails: '',
-    dateReported: '',
     workerId: '',
     patientId: '',
   });
@@ -80,18 +79,6 @@ function AddReport() {
             id="diagnosisDetails"
             name="diagnosisDetails"
             value={report.diagnosisDetails}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="dateReported" className="form-label">Date Reported</label>
-          <input
-            type="date"
-            className="form-control"
-            id="dateReported"
-            name="dateReported"
-            value={report.dateReported}
             onChange={handleChange}
             required
           />
