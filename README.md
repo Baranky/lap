@@ -98,7 +98,7 @@ docker pull postgres:13
 ```bash
 docker network create lab-network
 ````
-##### PostgreSQL containerını başlat
+##### Postgres containerını başlat
 ```bash
 docker run -d --name postgres-db --network lab-network -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=1905( your password) -e POSTGRES_DB=lab -p 5432:5432 postgres:13   
 ````
@@ -108,6 +108,6 @@ docker run -d --name lab-backend --network lab-network -e SPRING_DATASOURCE_URL=
 ````
 ##### frontend containerını başlat
 ```bash
-docker run -d --name frontend -p 3000:80  baranky1905/frontend
+docker run -d --name frontend -p 3000:80  baranky1905/lab-frontend
 ````
 
